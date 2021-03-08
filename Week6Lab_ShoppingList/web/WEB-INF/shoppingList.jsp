@@ -21,7 +21,7 @@
         <form action="ShoppingList?action=add" method="post">
             Add item: 
             <input type="text" name="item">
-            <!--<input type="hidden" name="action" value="add">-->
+            <input type="hidden" name="action" value="add">
             <input type="submit" value="Add">
         </form>
         <br>
@@ -29,7 +29,7 @@
             <c:forEach var="items" items="${items}">
                 <input type="radio" name="item" value="${item}">${item}<br>
             </c:forEach>                        
-            <!--<input type="hidden" name="action" value="delete">-->
+            <input type="hidden" name="action" value="delete">
             <input type="submit" value="Delete" >
         </form>
             <p>${message}</p>

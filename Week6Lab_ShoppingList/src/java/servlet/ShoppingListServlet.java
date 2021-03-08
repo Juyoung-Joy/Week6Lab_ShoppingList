@@ -63,17 +63,19 @@ public class ShoppingListServlet extends HttpServlet {
                     return;
                 }                
                 session.setAttribute("username", username);
+                session.setAttribute("items", items);
                 break;
             
             case "add": 
                 String item = request.getParameter("item");
+                items = (ArrayList<String>) session.getAttribute("items");
                 items.add(item);
                 session.setAttribute("items", items);     
-                session.setAttribute("item", item);
                 break;
                 
             case "delete":
                 String delItem = request.getParameter("item");
+                items = (ArrayList<String>) session.getAttribute("items");
                 items.remove(delItem);
                 session.setAttribute("items", items);
                 break;
